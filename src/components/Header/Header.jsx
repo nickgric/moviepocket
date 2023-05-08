@@ -1,9 +1,10 @@
-import { PageContainer } from "../PageContainer";
+import { MainNavigation } from "../MainNavigation/MainNavigation";
+import { HeaderStyledBox } from "./HeaderStyled";
 
 export const Header = () => {
   return (
-    <PageContainer>
-      <h1>Test</h1>
-    </PageContainer>
+    <HeaderStyledBox>
+      <MainNavigation />
+    </HeaderStyledBox>
   );
 };

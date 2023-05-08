@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import { buttonStyle } from "./buttonStyle";
 
 export const chakraTheme = extendTheme({
   breakpoints: {
@@ -9,10 +10,14 @@ export const chakraTheme = extendTheme({
     desk: "1280px",
   },
 
+  components: { Button: buttonStyle },
+
   styles: {
     global: {
       body: {
         h: "100vh",
+        position: "relative",
+        backgroundColor: "#141414",
       },
     },
   },
