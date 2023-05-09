@@ -32,24 +32,24 @@ export const fetchSearch = async (query, page) => {
 // https://developers.themoviedb.org/3/movies/get-movie-details
 export const fetchMovie = async (id) => {
   try {
-    const response = await axios(
+    const { data } = await axios(
       `${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`
     );
 
-    return response;
+    return data;
   } catch (error) {
     console.error(error);
   }
 };
 
 // https://developers.themoviedb.org/3/movies/get-movie-credits
-export const fetchActors = async (id) => {
+export const fetchCast = async (id) => {
   try {
-    const response = await axios(
+    const { data } = await axios(
       `${BASE_URL}movie/${id}/credits?api_key=${API_KEY}&language=en-US`
     );
 
-    return response;
+    return data;
   } catch (error) {
     console.error(error);
   }

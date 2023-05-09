@@ -1,11 +1,6 @@
 import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
-import {
-  accentColor,
-  invertFontColor,
-  accentFontColor,
-  mainFont,
-} from "./variables";
+import { accentColor, accentFontColor, mainFont } from "./variables";
 
 const baseStyle = defineStyle({
   fontFamily: mainFont,
@@ -22,7 +17,7 @@ const baseStyle = defineStyle({
 const colorButton = defineStyle({
   border: "none",
   background: `linear-gradient(0deg, ${accentColor}, ${accentColor}), linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.0128) 100%)`,
-  color: invertFontColor,
+  color: accentFontColor,
   //   _hover: {
   //     boxShadow: "0px 6px 15px rgba(36, 204, 167, 0.5)",
   //   },

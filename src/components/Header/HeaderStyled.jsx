@@ -11,7 +11,7 @@ export const HeaderStyledBox = ({ children }) => {
       backgroundColor={"#262626"}
       border={"0px solid #636363"}
       borderRightWidth={"1px"}
-      w={"68px"}
+      w={"70px"}
       h={"100vh"}
     >
       {children}

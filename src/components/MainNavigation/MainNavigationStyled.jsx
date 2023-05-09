@@ -31,8 +31,6 @@ export const MainNavigationItem = ({ name, to }) => {
     } else location.pathname === to ? setActive.on() : setActive.off();
   }, [location.pathname, to, setActive]);
 
-  console.log(location.pathname.includes(to));
-
   return (
     <Flex
       as={Link}
@@ -42,9 +40,11 @@ export const MainNavigationItem = ({ name, to }) => {
       justifyContent={"center"}
       alignItems={"center"}
       onMouseEnter={setActive.on}
-      onMouseLeave={
-        location.pathname.includes(to) ? setActive.on : setActive.off
-      }
+      onMouseLeave={() => {
+        if (to !== "/") {
+          location.pathname.includes(to) ? setActive.on() : setActive.off();
+        } else location.pathname === to ? setActive.on() : setActive.off();
+      }}
       _hover={{
         background:
           "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.0748) 50.85%, rgba(255, 255, 255, 0) 100%)",
