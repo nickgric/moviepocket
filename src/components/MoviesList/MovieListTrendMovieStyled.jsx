@@ -9,7 +9,12 @@ import {
 
 export const MoviesListTrendMovieBox = ({ children }) => {
   return (
-    <Flex as={"div"} flexDirection={"column"} w={"600px"} mb={"100px"}>
+    <Flex
+      as={"div"}
+      flexDirection={"column"}
+      w={{ base: "260px", mobMax: "600px" }}
+      mb={"100px"}
+    >
       {children}
     </Flex>
   );
@@ -20,7 +25,7 @@ export const MoviesListTrendMovieTitle = ({ title }) => {
     <Text
       as={"h2"}
       fontFamily={accentFont}
-      fontSize={"90px"}
+      fontSize={{ base: "30px", mobMax: "90px" }}
       lineHeight={"0.9"}
       letterSpacing={"-0.02em"}
       color={accentFontColor}

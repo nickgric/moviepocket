@@ -12,8 +12,8 @@ export const MainNavigationBox = ({ children }) => {
     <Flex
       justifyContent={"center"}
       alignItems={"center"}
-      flexDirection={"column"}
-      w={"100%"}
+      flexDirection={{ base: "row", mobMax: "column" }}
+      w={{ base: "320px", mobMax: "100%" }}
       h={"100%"}
     >
       {children}
@@ -35,8 +35,8 @@ export const MainNavigationItem = ({ name, to }) => {
     <Flex
       as={Link}
       to={to}
-      h={"200px"}
-      w={"100%"}
+      h={{ base: "70px", mobMax: "200px" }}
+      w={{ base: "75px", mobMax: "100%" }}
       justifyContent={"center"}
       alignItems={"center"}
       onMouseEnter={setActive.on}

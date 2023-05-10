@@ -6,6 +6,7 @@ export const MoviesListBox = ({ children, backdrop }) => {
       as={"div"}
       backgroundImage={`linear-gradient(90deg, #141414 0%, rgba(21, 17, 17, 0.49) 100%), url(${backdrop}), #2D2D2D;`}
       backgroundSize={"cover"}
+      backgroundPosition={"center"}
       backgroundRepeat={"no-repeat"}
       position={"fixed"}
       zIndex={"99"}
@@ -30,14 +31,16 @@ export const MoviesListTrendMoviesProgress = ({ value, max }) => {
     <Progress
       value={value}
       max={max}
-      transform={"rotate(270deg)"}
-      transformOrigin={"left top"}
+      transform={{ base: "rotate(0deg)", mobMax: "rotate(270deg)" }}
+      transformOrigin={{ base: "left bottom", mobMax: "left top" }}
       position={"fixed"}
-      left={"70px"}
-      top={"100vh"}
-      h={"1px"}
+      left={{ mobMax: "70px" }}
+      top={{ mobMax: "100vh" }}
+      bottom={{ base: "50px", mobMax: "0px" }}
+      h={"2px"}
       w={"100vh"}
       zIndex={"14000000"}
+      variant={"progressBarFilms"}
     />
   );
 };
