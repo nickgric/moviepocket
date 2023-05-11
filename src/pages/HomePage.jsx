@@ -19,6 +19,7 @@ const HomePage = () => {
   }, [page]);
 
   const nextPage = () => {
+    if (page === totalPages) return;
     setPage(page + 1);
     setHasMore(false);
   };
@@ -29,10 +30,10 @@ const HomePage = () => {
         <>
           <MoviesList
             movies={movies}
-            nextPage={nextPage}
             hasMore={hasMore}
             page={page}
             totalPages={totalPages}
+            nextPage={nextPage}
           />
         </>
       )}

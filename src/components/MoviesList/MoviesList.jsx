@@ -9,7 +9,6 @@ import {
   MoviesListTrendMoviesBox,
   MoviesListTrendMoviesProgress,
 } from "./MoviesListStyled";
-import { Link } from "@chakra-ui/react";
 
 const BASE_BACKDROP_URL = "https://image.tmdb.org/t/p/w1280";
 const BASE_POSTER_URL = "https://www.themoviedb.org/t/p/w1280";
@@ -33,15 +32,6 @@ export const MoviesList = ({ movies, nextPage, hasMore, page, totalPages }) => {
               />
             ))}
           </MoviesListTrendMoviesBox>
-          <Link
-            href="http://localhost:3000/"
-            position={"fixed"}
-            bottom={"20px"}
-            right={"20px"}
-            color={"white"}
-          >
-            TOP
-          </Link>
         </InfiniteScroll>
       </PageContainer>
     </MoviesListBox>

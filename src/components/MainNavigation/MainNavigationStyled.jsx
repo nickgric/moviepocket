@@ -13,7 +13,7 @@ export const MainNavigationBox = ({ children }) => {
       justifyContent={"center"}
       alignItems={"center"}
       flexDirection={{ base: "row", mobMax: "column" }}
-      w={{ base: "320px", mobMax: "100%" }}
+      w={"100%"}
       h={"100%"}
     >
       {children}
@@ -35,7 +35,7 @@ export const MainNavigationItem = ({ name, to }) => {
     <Flex
       as={Link}
       to={to}
-      h={{ base: "70px", mobMax: "200px" }}
+      h={{ base: "100%", mobMax: "200px" }}
       w={{ base: "75px", mobMax: "100%" }}
       justifyContent={"center"}
       alignItems={"center"}
@@ -46,8 +46,11 @@ export const MainNavigationItem = ({ name, to }) => {
         } else location.pathname === to ? setActive.on() : setActive.off();
       }}
       _hover={{
-        background:
-          "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.0748) 50.85%, rgba(255, 255, 255, 0) 100%)",
+        background: {
+          base: "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.0748) 50.85%, rgba(255, 255, 255, 0) 100%)",
+          mobMax:
+            "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.0748) 50.85%, rgba(255, 255, 255, 0) 100%)",
+        },
       }}
     >
       <MainNavigationIcon name={name} active={active} />

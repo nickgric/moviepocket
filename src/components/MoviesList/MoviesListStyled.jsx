@@ -9,7 +9,7 @@ export const MoviesListBox = ({ children, backdrop }) => {
       backgroundPosition={"center"}
       backgroundRepeat={"no-repeat"}
       position={"fixed"}
-      zIndex={"99"}
+      zIndex={"80"}
       w={"100%"}
       h={"100vh"}
     >
@@ -20,7 +20,7 @@ export const MoviesListBox = ({ children, backdrop }) => {
 
 export const MoviesListTrendMoviesBox = ({ children }) => {
   return (
-    <Flex flexWrap={"wrap"} justifyContent={"space-between"} gap={"40px"}>
+    <Flex flexWrap={"wrap"} justifyContent={"space-between"} gap={"20px"}>
       {children}
     </Flex>
   );
@@ -32,14 +32,14 @@ export const MoviesListTrendMoviesProgress = ({ value, max }) => {
       value={value}
       max={max}
       transform={{ base: "rotate(0deg)", mobMax: "rotate(270deg)" }}
-      transformOrigin={{ base: "left bottom", mobMax: "left top" }}
+      transformOrigin={"left top"}
       position={"fixed"}
       left={{ mobMax: "70px" }}
       top={{ mobMax: "100vh" }}
       bottom={{ base: "50px", mobMax: "0px" }}
       h={"2px"}
       w={"100vh"}
-      zIndex={"14000000"}
+      zIndex={"120"}
       variant={"progressBarFilms"}
     />
   );
