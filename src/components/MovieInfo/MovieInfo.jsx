@@ -10,6 +10,7 @@ import { MovieInfoCast } from "./MovieInfoCast";
 
 import {
   MovieInfoBox,
+  MovieContainer,
   MovieInfoTitle,
   MovieInfoInfoBox,
   MovieInfoYear,
@@ -17,6 +18,11 @@ import {
   MovieInfoRuntime,
   MovieInfoMainInfoBox,
   MovieInfoCastNames,
+  MovieMoreInfoBox,
+  MovieMoreInfoTypeBox,
+  MovieType,
+  MovieGenre,
+  MovieRating,
 } from "./MovieInfoStyled";
 
 const BASE_BACKDROP_URL = "https://image.tmdb.org/t/p/w1280";
@@ -41,20 +47,30 @@ export const MovieInfo = () => {
       {movie && cast && (
         <MovieInfoBox backdrop={BASE_BACKDROP_URL + movie.backdrop_path}>
           <PageContainer>
-            <MovieInfoInfoBox>
-              <MovieInfoTitle title={movie.title} />
-              <MovieInfoMainInfoBox>
-                <MovieInfoYear year={movie.release_date.slice(0, 4)} />
-                <MovieInfoRuntime runtime={getTimeFromMins(movie.runtime)} />
-              </MovieInfoMainInfoBox>
-              <MovieInfoOverview overview={movie.overview} />
+            <MovieContainer>
+              <MovieInfoInfoBox>
+                <MovieInfoTitle title={movie.title} />
+                <MovieInfoMainInfoBox>
+                  <MovieInfoYear year={movie.release_date.slice(0, 4)} />
+                  <MovieInfoRuntime runtime={getTimeFromMins(movie.runtime)} />
+                </MovieInfoMainInfoBox>
+                <MovieInfoOverview overview={movie.overview} />
+              </MovieInfoInfoBox>
+              <MovieMoreInfoBox>
+                <MovieMoreInfoTypeBox>
+                  <MovieType />
+                  <MovieGenre />
+                </MovieMoreInfoTypeBox>
+                <MovieRating rating={movie.vote_average.toFixed(1)} />
+              </MovieMoreInfoBox>
+
               {!castActive && (
                 <MovieInfoCastNames cast={cast} onClick={castActiveHandler} />
               )}
               {castActive && (
                 <MovieInfoCast cast={cast} closeCast={castActiveHandler} />
               )}
-            </MovieInfoInfoBox>
+            </MovieContainer>
           </PageContainer>
         </MovieInfoBox>
       )}
