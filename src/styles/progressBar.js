@@ -3,7 +3,7 @@ import { accentColor } from "./variables";
 
 const progressBarFilms = defineStyle({
   track: {
-    background: "#262626",
+    background: "#00000000",
   },
   filledTrack: {
     background: `${accentColor}`,

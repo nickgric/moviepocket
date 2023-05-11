@@ -4,7 +4,7 @@ const API_KEY = "020befa6f5b3204d9cdfb69cb3fae25a";
 const BASE_URL = "https://api.themoviedb.org/3/";
 
 // https://developers.themoviedb.org/3/trending/get-trending
-export const fetchHome = async (page) => {
+export const fetchTrend = async (page) => {
   try {
     const { data } = await axios(
       `${BASE_URL}trending/movie/week?api_key=${API_KEY}&page=${page}`
@@ -19,11 +19,11 @@ export const fetchHome = async (page) => {
 // https://developers.themoviedb.org/3/search/search-movies
 export const fetchSearch = async (query, page) => {
   try {
-    const response = await axios(
+    const { data } = await axios(
       `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=${page}&include_adult=false`
     );
 
-    return response;
+    return data;
   } catch (error) {
     console.error(error);
   }

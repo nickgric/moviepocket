@@ -1,0 +1,1 @@
+export { MoviesScrollProgress } from "./MoviesScrollProgress";

@@ -1,8 +1,3 @@
-import { PageContainer } from "../PageContainer";
-import { MoviesListItem } from "../MoviesList/MoviesListItem";
-
-import Media from "react-media";
-
 import {
   MoviesListTrendMovieBox,
   MoviesListTrendMovieTitle,
@@ -33,7 +28,10 @@ export const MovieListTrendMovie = ({ movies }) => {
       <MoviesListTrendMovieButtonsBox>
         <MoviesListTrendMovieTrailerButton />
         <MoviesListTrendMovieSideButtonsBox>
-          <MoviesListTrendMovieInfoButton />
+          <MoviesListTrendMovieInfoButton
+            id={trendMovie.id}
+            title={trendMovie.title}
+          />
           <MoviesListTrendMoviePocketButton />
         </MoviesListTrendMovieSideButtonsBox>
       </MoviesListTrendMovieButtonsBox>

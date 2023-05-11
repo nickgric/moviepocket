@@ -18,7 +18,7 @@ export const chakraTheme = extendTheme({
       body: {
         h: "100vh",
         position: "relative",
-        backgroundColor: "#141414",
+        backgroundColor: "#191919",
       },
     },
   },

@@ -11,7 +11,7 @@ export const MovieInfoBox = ({ children, backdrop }) => {
   return (
     <Flex
       as={"div"}
-      backgroundImage={`linear-gradient(90deg, #141414 0%, rgba(21, 17, 17, 0.49) 100%), url(${backdrop}), #2D2D2D;`}
+      backgroundImage={`linear-gradient(90deg, #191919 20%, rgba(21, 17, 17, 0.5) 50%), url(${backdrop}), #141414;`}
       backgroundSize={"cover"}
       backgroundRepeat={"no-repeat"}
       position={"fixed"}

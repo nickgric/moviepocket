@@ -10,8 +10,7 @@ export const HeaderStyledBox = ({ children }) => {
       zIndex={"100"}
       justifyContent={"center"}
       alignItems={"center"}
-      backgroundColor={"#262626"}
-      border={"0px solid #636363"}
+      backgroundColor={"#191919"}
       w={{ base: "100%", mobMax: "70px" }}
       h={{ base: "50px", mobMax: "100vh" }}
     >

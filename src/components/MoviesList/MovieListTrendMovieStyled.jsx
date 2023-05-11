@@ -1,4 +1,6 @@
+import slugify from "react-slugify";
 import { Flex, Text, Button, Icon } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 import {
   accentFont,
@@ -138,9 +140,14 @@ export const MoviesListTrendMovieTrailerButton = () => {
   );
 };
 
-export const MoviesListTrendMovieInfoButton = () => {
+export const MoviesListTrendMovieInfoButton = ({ id, title }) => {
   return (
-    <Button variant={"translucentButton"} w={"60px"}>
+    <Button
+      as={Link}
+      to={`/search/movie/${slugify(title)}/${id}`}
+      variant={"translucentButton"}
+      w={"60px"}
+    >
       <Flex justifyContent={"center"} alignItems={"center"} gap={"4px"}>
         <Text>Info</Text>
       </Flex>

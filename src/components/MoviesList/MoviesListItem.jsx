@@ -5,7 +5,7 @@ import { MoviesListItemBox } from "./MoviesListItemStyled";
 
 export const MoviesListItem = ({ poster, id, title }) => {
   return (
-    <Link to={`/search/${slugify(title)}/${id}`}>
+    <Link to={`/search/movie/${slugify(title)}/${id}`}>
       <MoviesListItemBox poster={poster}></MoviesListItemBox>
     </Link>
   );
