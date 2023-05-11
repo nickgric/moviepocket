@@ -4,14 +4,16 @@ import { useEffect, useState } from "react";
 import { fetchTrend } from "../../utils/fetch";
 
 import { PageContainer } from "../PageContainer";
-import { MoviesListItem } from "../MoviesList/MoviesListItem";
-import { MovieListTrendMovie } from "./MovieListTrendMovie";
-import { MoviesScrollProgress } from "../MoviesScrollProgress";
 
-import { MoviesListBox, MoviesListTrendMoviesBox } from "./MoviesListStyled";
+import { TrendMovie } from "./TrendMovie";
+import { PopularMovies } from "./PopularMovies";
+import { TopMovies } from "./TopMovies/TopMovies";
+
+import { ScrollProgress } from "../ScrollProgress";
+
+import { MoviesListBox } from "./MoviesListStyled";
 
 const BASE_BACKDROP_URL = "https://image.tmdb.org/t/p/w1280";
-const BASE_POSTER_URL = "https://www.themoviedb.org/t/p/w1280";
 
 export const MoviesList = () => {
   const [movies, setMovies] = useState([]);
@@ -34,30 +36,20 @@ export const MoviesList = () => {
     setHasMore(false);
   };
 
-  const trendMovie = movies[0];
-
   return (
     <>
-      {movies.length > 0 && (
-        <MoviesListBox backdrop={BASE_BACKDROP_URL + trendMovie.backdrop_path}>
-          {totalPages && <MoviesScrollProgress value={page} max={totalPages} />}
+      {movies.length > 0 && totalPages && (
+        <MoviesListBox backdrop={BASE_BACKDROP_URL + movies[0].backdrop_path}>
+          <ScrollProgress value={page} max={totalPages} />
           <PageContainer>
-            <MovieListTrendMovie movies={movies} />
             <InfiniteScroll
               loadMore={nextPage}
               hasMore={hasMore}
               useWindow={false}
             >
-              <MoviesListTrendMoviesBox>
-                {movies.map((movie) => (
-                  <MoviesListItem
-                    key={movie.id}
-                    id={movie.id}
-                    title={movie.title}
-                    poster={BASE_POSTER_URL + movie.poster_path}
-                  />
-                ))}
-              </MoviesListTrendMoviesBox>
+              <TrendMovie movie={movies[0]} />
+              <TopMovies movies={movies.slice(1, 4)} />
+              <PopularMovies movies={movies.slice(4)} />
             </InfiniteScroll>
           </PageContainer>
         </MoviesListBox>

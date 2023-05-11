@@ -17,11 +17,3 @@ export const MoviesListBox = ({ children, backdrop }) => {
     </Flex>
   );
 };
-
-export const MoviesListTrendMoviesBox = ({ children }) => {
-  return (
-    <Flex flexWrap={"wrap"} justifyContent={"space-between"} gap={"20px"}>
-      {children}
-    </Flex>
-  );
-};

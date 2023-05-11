@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { fetchSearch, fetchTrend } from "../../utils/fetch";
 
 import { PageContainer } from "../PageContainer";
-import { MoviesScrollProgress } from "../MoviesScrollProgress";
+import { ScrollProgress } from "../ScrollProgress";
 
 import {
   SearchEngineBox,
@@ -60,7 +60,7 @@ export const SearchEngine = () => {
     <>
       {movies.length > 0 && (
         <SearchEngineBox backdrop={BASE_BACKDROP_URL + movies[0].backdrop_path}>
-          {totalPages && <MoviesScrollProgress value={page} max={totalPages} />}
+          {totalPages && <ScrollProgress value={page} max={totalPages} />}
           <PageContainer>
             <SearchEngineTitle title={"Search"} />
             <SearchEngineInput submitHandler={submitHandler} />

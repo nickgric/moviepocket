@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 
-export const MoviesListItemBox = ({ children, poster }) => {
+export const PopularMoviesItemBox = ({ children, poster }) => {
   return (
     <Box
       as={"div"}

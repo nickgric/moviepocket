@@ -1,6 +1,6 @@
 import { Progress } from "@chakra-ui/react";
 
-export const MoviesScrollProgressStyled = ({ value, max }) => {
+export const ScrollProgressStyled = ({ value, max }) => {
   return (
     <Progress
       value={value}

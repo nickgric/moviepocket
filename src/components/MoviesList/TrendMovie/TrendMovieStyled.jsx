@@ -7,22 +7,22 @@ import {
   accentFontColor,
   mainFont,
   mainFontColor,
-} from "../../styles/variables";
+} from "../../../styles/variables";
 
-export const MoviesListTrendMovieBox = ({ children }) => {
+export const TrendMovieBox = ({ children }) => {
   return (
     <Flex
       as={"div"}
       flexDirection={"column"}
       w={{ base: "260px", mobMax: "600px" }}
-      mb={"100px"}
+      mb={"85px"}
     >
       {children}
     </Flex>
   );
 };
 
-export const MoviesListTrendMovieTitle = ({ title }) => {
+export const TrendMovieTitle = ({ title }) => {
   return (
     <Text
       as={"h2"}
@@ -39,7 +39,7 @@ export const MoviesListTrendMovieTitle = ({ title }) => {
   );
 };
 
-export const MoviesListTrendMovieRatingYearBox = ({ children }) => {
+export const TrendMovieRatingYearBox = ({ children }) => {
   return (
     <Flex as={"div"} gap={"14px"} mb={"20px"}>
       {children}
@@ -47,7 +47,7 @@ export const MoviesListTrendMovieRatingYearBox = ({ children }) => {
   );
 };
 
-export const MoviesListTrendMovieRating = ({ rating }) => {
+export const TrendMovieRating = ({ rating }) => {
   return (
     <Flex
       as={"div"}
@@ -89,7 +89,7 @@ export const MoviesListTrendMovieRating = ({ rating }) => {
   );
 };
 
-export const MoviesListTrendMovieYear = ({ year }) => {
+export const TrendMovieYear = ({ year }) => {
   return (
     <Flex as={"div"} justifyContent={"center"} alignItems={"center"}>
       <Text
@@ -106,7 +106,7 @@ export const MoviesListTrendMovieYear = ({ year }) => {
   );
 };
 
-export const MoviesListTrendMovieOverview = ({ overview }) => {
+export const TrendMovieOverview = ({ overview }) => {
   return (
     <Text
       as={"p"}
@@ -122,7 +122,7 @@ export const MoviesListTrendMovieOverview = ({ overview }) => {
   );
 };
 
-export const MoviesListTrendMovieTrailerButton = () => {
+export const TrendMovieTrailerButton = () => {
   return (
     <Button variant={"colorButton"} w={"100px"}>
       <Flex justifyContent={"center"} alignItems={"center"} gap={"4px"}>
@@ -140,7 +140,7 @@ export const MoviesListTrendMovieTrailerButton = () => {
   );
 };
 
-export const MoviesListTrendMovieInfoButton = ({ id, title }) => {
+export const TrendMovieInfoButton = ({ id, title }) => {
   return (
     <Button
       as={Link}
@@ -155,7 +155,7 @@ export const MoviesListTrendMovieInfoButton = ({ id, title }) => {
   );
 };
 
-export const MoviesListTrendMoviePocketButton = () => {
+export const TrendMoviePocketButton = () => {
   return (
     <Button variant={"translucentButton"} w={"100px"}>
       <Flex justifyContent={"center"} alignItems={"center"} gap={"4px"}>
@@ -173,7 +173,7 @@ export const MoviesListTrendMoviePocketButton = () => {
   );
 };
 
-export const MoviesListTrendMovieButtonsBox = ({ children }) => {
+export const TrendMovieButtonsBox = ({ children }) => {
   return (
     <Flex justifyContent={"space-between"} alignItems={"center"}>
       {children}
@@ -181,7 +181,7 @@ export const MoviesListTrendMovieButtonsBox = ({ children }) => {
   );
 };
 
-export const MoviesListTrendMovieSideButtonsBox = ({ children }) => {
+export const TrendMovieSideButtonsBox = ({ children }) => {
   return (
     <Flex justifyContent={"center"} gap={"12px"}>
       {children}
