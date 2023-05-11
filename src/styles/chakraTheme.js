@@ -1,6 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 import { buttonStyle } from "./buttonStyle";
 import { progressStyle } from "./progressBar";
+import { inputStyle } from "./inputStyle";
 
 export const chakraTheme = extendTheme({
   breakpoints: {
@@ -11,7 +12,11 @@ export const chakraTheme = extendTheme({
     desk: "1280px",
   },
 
-  components: { Button: buttonStyle, Progress: progressStyle },
+  components: {
+    Button: buttonStyle,
+    Progress: progressStyle,
+    Input: inputStyle,
+  },
 
   styles: {
     global: {

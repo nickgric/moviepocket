@@ -2,9 +2,9 @@ import { Flex, Box, Input, Text } from "@chakra-ui/react";
 
 import {
   accentFont,
-  accentFontColor,
   mainFont,
-  mainFontColor,
+  accentFontColor,
+  secondaryAccentColor,
 } from "../../styles/variables";
 
 export const SearchEngineBox = ({ children, backdrop }) => {
@@ -45,7 +45,18 @@ export const SearchEngineTitle = ({ title }) => {
 export const SearchEngineInput = ({ submitHandler, inputHandler }) => {
   return (
     <form onSubmit={submitHandler}>
-      <Input placeholder="Search" name={"input"} />
+      <Input
+        borderColor={secondaryAccentColor}
+        fontFamily={mainFont}
+        fontSize={"22px"}
+        color={accentFontColor}
+        placeholder="Search"
+        name={"input"}
+        _placeholder={{
+          color: secondaryAccentColor,
+          fontSize: "26px",
+        }}
+      />
     </form>
   );
 };
