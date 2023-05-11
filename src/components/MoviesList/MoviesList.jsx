@@ -11,7 +11,7 @@ import { TopMovies } from "./TopMovies/TopMovies";
 
 import { ScrollProgress } from "../ScrollProgress";
 
-import { MoviesListBox } from "./MoviesListStyled";
+import { MoviesListBox, ListTypeTitle } from "./MoviesListStyled";
 
 const BASE_BACKDROP_URL = "https://image.tmdb.org/t/p/w1280";
 
@@ -47,8 +47,11 @@ export const MoviesList = () => {
               hasMore={hasMore}
               useWindow={false}
             >
+              <ListTypeTitle title={"trend movie to watch"} />
               <TrendMovie movie={movies[0]} />
+              <ListTypeTitle title={"top movies this week"} accent />
               <TopMovies movies={movies.slice(1, 4)} />
+              <ListTypeTitle title={"popular movies today"} accent />
               <PopularMovies movies={movies.slice(4)} />
             </InfiniteScroll>
           </PageContainer>

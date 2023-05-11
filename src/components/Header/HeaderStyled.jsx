@@ -11,8 +11,8 @@ export const HeaderStyledBox = ({ children }) => {
       justifyContent={"center"}
       alignItems={"center"}
       backgroundColor={"#191919"}
-      w={{ base: "100%", mobMax: "70px" }}
-      h={{ base: "50px", mobMax: "100vh" }}
+      w={{ base: "100%", tab: "70px" }}
+      h={{ base: "50px", tab: "100vh" }}
     >
       {children}
     </Flex>

@@ -62,7 +62,6 @@ export const SearchEngine = () => {
         <SearchEngineBox backdrop={BASE_BACKDROP_URL + movies[0].backdrop_path}>
           {totalPages && <ScrollProgress value={page} max={totalPages} />}
           <PageContainer>
-            <SearchEngineTitle title={"Search"} />
             <SearchEngineInput submitHandler={submitHandler} />
             {movies.length > 0 && (
               <InfiniteScroll

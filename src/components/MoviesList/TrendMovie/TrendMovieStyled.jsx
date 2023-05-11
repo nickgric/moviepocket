@@ -14,8 +14,8 @@ export const TrendMovieBox = ({ children }) => {
     <Flex
       as={"div"}
       flexDirection={"column"}
-      w={{ base: "260px", mobMax: "600px" }}
-      mb={"85px"}
+      w={{ base: "100%", tab: "600px" }}
+      mb={"75px"}
     >
       {children}
     </Flex>
@@ -27,7 +27,7 @@ export const TrendMovieTitle = ({ title }) => {
     <Text
       as={"h2"}
       fontFamily={accentFont}
-      fontSize={{ base: "30px", mobMax: "90px" }}
+      fontSize={{ base: "45px", mobMax: "60px", tab: "90px" }}
       lineHeight={"0.9"}
       letterSpacing={"-0.02em"}
       color={accentFontColor}
@@ -111,7 +111,7 @@ export const TrendMovieOverview = ({ overview }) => {
     <Text
       as={"p"}
       fontFamily={mainFont}
-      fontSize={"20px"}
+      fontSize={{ base: "16px", mobMax: "20px" }}
       lineHeight={"1.32"}
       letterSpacing={"-0.01em"}
       color={mainFontColor}
@@ -146,10 +146,10 @@ export const TrendMovieInfoButton = ({ id, title }) => {
       as={Link}
       to={`/search/movie/${slugify(title)}/${id}`}
       variant={"translucentButton"}
-      w={"60px"}
+      w={"20px"}
     >
       <Flex justifyContent={"center"} alignItems={"center"} gap={"4px"}>
-        <Text>Info</Text>
+        <Text>i</Text>
       </Flex>
     </Button>
   );
@@ -183,7 +183,7 @@ export const TrendMovieButtonsBox = ({ children }) => {
 
 export const TrendMovieSideButtonsBox = ({ children }) => {
   return (
-    <Flex justifyContent={"center"} gap={"12px"}>
+    <Flex justifyContent={"center"} gap={"10px"}>
       {children}
     </Flex>
   );

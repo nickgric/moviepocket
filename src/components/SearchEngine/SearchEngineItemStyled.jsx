@@ -6,6 +6,7 @@ import {
   mainFont,
   mainFontColor,
   accentFontColor,
+  accentFont,
 } from "../../styles/variables";
 
 export const SearchEngineItemBox = ({ children, title, id }) => {
@@ -14,7 +15,8 @@ export const SearchEngineItemBox = ({ children, title, id }) => {
       as={Link}
       to={`/search/movie/${slugify(title)}/${id}`}
       w={"100%"}
-      py={"22px"}
+      flexDirection={{ base: "column", mobMax: "row" }}
+      mb={{ base: "20px", tabMax: "0px" }}
     >
       {children}
     </Flex>
@@ -25,13 +27,27 @@ export const SearchEngineItemPicture = ({ children, poster }) => {
   return (
     <Box
       as={"div"}
-      minW={"150px"}
-      minH={"225px"}
-      borderRadius={"15px"}
-      filter={"drop-shadow(0px 0px 22px rgba(22, 22, 22, 0.16))"}
+      w={{ base: "100%", mobMax: "50%" }}
+      aspectRatio={"2 / 3"}
+      minW={{
+        base: "auto",
+        mobMax: "calc(50% - 10px)",
+        tab: "176px",
+        tabMax: "240px",
+        desk: "340px",
+      }}
+      minH={{
+        base: "auto",
+        mobMax: "50%",
+        tab: "264px",
+        tabMax: "360px",
+        desk: "510px",
+      }}
+      borderRadius={"5px"}
       backgroundImage={poster}
       backgroundSize={"cover"}
       backgroundRepeat={"no-repeat"}
+      mb={{ base: "30px" }}
     >
       {children}
     </Box>
@@ -39,20 +55,17 @@ export const SearchEngineItemPicture = ({ children, poster }) => {
 };
 
 export const SearchEngineItemInfoBox = ({ children }) => {
-  return (
-    <Box px={"26px"} py={"22px"}>
-      {children}
-    </Box>
-  );
+  return <Box px={{ base: "0px", mobMax: "26px" }}>{children}</Box>;
 };
 
 export const SearchEngineItemTitleYearBox = ({ children }) => {
   return (
     <Flex
-      alignItems={"center"}
+      alignItems={"baseline"}
       justifyContent={"space-between"}
+      gap={"30px"}
       w={"100%"}
-      mb={"23px"}
+      mb={"30px"}
     >
       {children}
     </Flex>
@@ -63,9 +76,9 @@ export const SearchEngineItemTitle = ({ title }) => {
   return (
     <Text
       color={accentFontColor}
-      fontFamily={mainFont}
+      fontFamily={accentFont}
       fontWeight={"600"}
-      fontSize={"22px"}
+      fontSize={{ base: "20px", desk: "22px" }}
       lineHeight={"1.18"}
       letterSpacing={"-0.5%"}
     >
@@ -93,7 +106,7 @@ export const SearchEngineItemOverview = ({ overview }) => {
     <Text
       color={mainFontColor}
       fontFamily={mainFont}
-      fontSize={"20px"}
+      fontSize={{ base: "14px", tab: "18px", tabMax: "16px", desk: "20px" }}
       lineHeight={"1.32"}
       letterSpacing={"-1%"}
     >

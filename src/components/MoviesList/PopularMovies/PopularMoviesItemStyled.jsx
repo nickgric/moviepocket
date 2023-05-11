@@ -1,13 +1,30 @@
-import { Box } from "@chakra-ui/react";
+import slugify from "react-slugify";
 
-export const PopularMoviesItemBox = ({ children, poster }) => {
+import { Box } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+
+export const PopularMoviesItemBox = ({ children, poster, title, id }) => {
   return (
     <Box
-      as={"div"}
-      w={"180px"}
-      h={"280px"}
-      borderRadius={"15px"}
-      filter={"drop-shadow(0px 0px 42px rgba(22, 22, 22, 0.16))"}
+      as={Link}
+      to={`/search/movie/${slugify(title)}/${id}`}
+      w={{ base: "100%", mobMax: "calc(50% - 10px)", tab: "auto" }}
+      aspectRatio={"2 / 3"}
+      minW={{
+        base: "260px",
+        mobMax: "190px",
+        tab: "176px",
+        tabMax: "240px",
+        desk: "252px",
+      }}
+      minH={{
+        base: "390px",
+        mobMax: "285px",
+        tab: "264px",
+        tabMax: "360px",
+        desk: "378px",
+      }}
+      borderRadius={"5px"}
       backgroundImage={poster}
       backgroundSize={"cover"}
       backgroundRepeat={"no-repeat"}
