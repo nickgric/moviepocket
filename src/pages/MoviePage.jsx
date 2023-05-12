@@ -1,7 +1,7 @@
-import { MovieInfo } from "../components/MovieInfo/MovieInfo";
+import { Movie } from "../components/Movie/Movie";
 
 const MoviePage = () => {
-  return <MovieInfo />;
+  return <Movie />;
 };
 
 export default MoviePage;

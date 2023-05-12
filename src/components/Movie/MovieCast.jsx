@@ -5,7 +5,7 @@ import { MovieInfoCastBox } from "./MovieInfoCastStyled";
 
 const BASE_CASTPHOTO_URL = "https://image.tmdb.org/t/p/w1280";
 
-export const MovieInfoCast = ({ cast, closeCast }) => {
+export const MovieCast = ({ cast, closeCast }) => {
   return (
     <MovieInfoCastBox>
       <Button variant={"colorButton"} onClick={closeCast}>

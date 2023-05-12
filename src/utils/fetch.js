@@ -54,3 +54,15 @@ export const fetchCast = async (id) => {
     console.error(error);
   }
 };
+
+// https://developers.themoviedb.org/3/movies/get-movie-videos
+export const fetchTrailer = async (id) => {
+  try {
+    const { data } = await axios(
+      `${BASE_URL}movie/${id}/videos?api_key=${API_KEY}&language=en-US`
+    );
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};

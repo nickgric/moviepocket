@@ -8,7 +8,7 @@ import {
   mainFont,
 } from "../../styles/variables";
 
-export const MovieInfoBox = ({ children, backdrop }) => {
+export const MovieBox = ({ children, backdrop }) => {
   return (
     <Flex
       as={"div"}
@@ -42,31 +42,31 @@ export const MovieContainer = ({ children }) => {
   );
 };
 
-export const MovieInfoInfoBox = ({ children }) => {
+export const MovieInfoBox = ({ children }) => {
   return (
-    <Flex as={"div"} flexDirection={"column"} w={"600px"}>
+    <Flex as={"div"} flexDirection={"column"}>
       {children}
     </Flex>
   );
 };
 
-export const MovieInfoTitle = ({ title }) => {
+export const MovieTitle = ({ title }) => {
   return (
     <Text
       as={"h2"}
       fontFamily={accentFont}
-      fontSize={"110px"}
+      fontSize={"100px"}
       lineHeight={"0.84"}
       letterSpacing={"-0.03em"}
       color={accentFontColor}
-      mb={"60px"}
+      mb={"20px"}
     >
       {title}
     </Text>
   );
 };
 
-export const MovieInfoMainInfoBox = ({ children }) => {
+export const MovieMainInfoBox = ({ children }) => {
   return (
     <Flex as={"div"} gap={"25px"} mb={"20px"}>
       {children}
@@ -74,7 +74,7 @@ export const MovieInfoMainInfoBox = ({ children }) => {
   );
 };
 
-export const MovieInfoYear = ({ year }) => {
+export const MovieYear = ({ year }) => {
   return (
     <Flex as={"div"} justifyContent={"start"} alignItems={"center"}>
       <Text
@@ -91,7 +91,7 @@ export const MovieInfoYear = ({ year }) => {
   );
 };
 
-export const MovieInfoRuntime = ({ runtime }) => {
+export const MovieRuntime = ({ runtime }) => {
   return (
     <Flex as={"div"} justifyContent={"start"} alignItems={"center"}>
       <Text
@@ -112,7 +112,7 @@ export const MovieInfoRuntime = ({ runtime }) => {
   );
 };
 
-export const MovieInfoOverview = ({ overview }) => {
+export const MovieOverview = ({ overview }) => {
   return (
     <Text
       as={"p"}
@@ -128,7 +128,7 @@ export const MovieInfoOverview = ({ overview }) => {
   );
 };
 
-export const MovieInfoCastNames = ({ cast, onClick }) => {
+export const MovieCastNames = ({ cast, onClick }) => {
   let mainActors = cast[0].original_name;
   if (cast[1]) mainActors = `${mainActors}, ${cast[1].original_name}`;
   if (cast[2]) mainActors = `${mainActors}, ${cast[2].original_name}`;
@@ -154,7 +154,12 @@ export const MovieInfoCastNames = ({ cast, onClick }) => {
 
 export const MovieMoreInfoBox = ({ children }) => {
   return (
-    <Flex as={"div"} w={"100%"} gap={"55%"} alignItems={"baseline"}>
+    <Flex
+      as={"div"}
+      w={"100%"}
+      justifyContent={"space-between"}
+      alignItems={"baseline"}
+    >
       {children}
     </Flex>
   );
@@ -173,7 +178,6 @@ export const MovieType = () => {
     <Text
       as={"p"}
       fontFamily={accentFont}
-      fontWeight={"400"}
       fontSize={"49px"}
       lineHeight={"1.24"}
       letterSpacing={"-0.035em"}
@@ -189,7 +193,6 @@ export const MovieGenre = () => {
     <Text
       as={"p"}
       fontFamily={accentFont}
-      fontWeight={"400"}
       fontSize={"22px"}
       lineHeight={"1.24"}
       letterSpacing={"-0.015em"}
@@ -236,5 +239,18 @@ export const MovieRating = ({ rating }) => {
         />
       </Icon>
     </Flex>
+  );
+};
+
+export const MovieTrailer = ({ trailer: { key } }) => {
+  return (
+    <Box
+      as={"iframe"}
+      width={{ desk: "1080px" }}
+      height={{ desk: "600px" }}
+      src={`https://www.youtube.com/embed/${key}`}
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    ></Box>
   );
 };
